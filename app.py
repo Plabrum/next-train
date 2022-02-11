@@ -5,7 +5,7 @@ from nyct_gtfs import NYCTFeed
 
 st.title('Graham Ave Train Times')
 
-st.secrets["mta_key"]
+mta_key = st.secrets["mta_key"]
 
 feed = NYCTFeed("L", api_key=mta_key)
 trains = feed.filter_trips(line_id="L", headed_for_stop_id="L12N", underway=True)
